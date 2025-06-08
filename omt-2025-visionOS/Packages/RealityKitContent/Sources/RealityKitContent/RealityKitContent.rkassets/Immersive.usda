@@ -1,0 +1,252 @@
+#usda 1.0
+(
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    reorder nameChildren = ["Banana", "GROUND", "Monkey", "GridMaterial", "Timeline", "Walk_to_banana_and_eat_it"]
+    def "GridMaterial" (
+        active = true
+        references = @Materials/GridMaterial.usda@
+    )
+    {
+        float3 xformOp:scale = (1, 1, 1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "Banana" (
+        active = true
+        references = @Banana.usdz@
+    )
+    {
+        float2 ui:nodegraph:node:pos = (20, 20)
+        int ui:nodegraph:node:stackingOrder = 1
+        float3 xformOp:scale = (0.0002, 0.0002, 0.0002)
+        float3 xformOp:translate = (0, 0.01, 0.09352516)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def RealityKitComponent "RCP_BehaviorsContainer"
+        {
+            rel behaviors = </Root/Banana/OnTap>
+            uniform token info:id = "RCP.BehaviorsContainer"
+        }
+
+        def Preliminary_Behavior "OnTap"
+        {
+            rel actions = </Root/Banana/OnTap/Action>
+            uniform bool exclusive
+            rel triggers = </Root/Banana/OnTap/Trigger>
+
+            def Preliminary_Trigger "Trigger"
+            {
+                rel affectedObjects = </Root/Banana>
+                token info:id = "TapGesture"
+            }
+
+            def Preliminary_Action "Action"
+            {
+                rel affectedObjects = </Root>
+                rel animationLibraryKey = </Root/Walk_to_banana_and_eat_it>
+                rel animationLibraryKeyOverrideKey = </Root/Banana/OnTap/Trigger>
+                token info:id = "PlayTimeline"
+                int loops = 0
+                int performCount = 1
+                token type = "serial"
+            }
+        }
+    }
+
+    def Cube "GROUND" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/GROUND/DefaultMaterial>
+        double size = 0.2
+        float2 ui:nodegraph:node:pos = (20, 20)
+        int ui:nodegraph:node:stackingOrder = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (3, 0.1, 3)
+        float3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/GROUND/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0, 0.99007565, 0.20759396) (
+                    colorSpace = "srgb_displayp3"
+                )
+                color3f inputs:emissiveColor = (0, 0.7280649, 0) (
+                    colorSpace = "lin_srgb"
+                )
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def "Monkey" (
+        active = true
+        customData = {
+            float3 rotationEulerHint = (-1.5707964, 0, 0)
+        }
+        references = @Monkey2.usdz@
+    )
+    {
+        float2 ui:nodegraph:node:pos = (20, 20)
+        int ui:nodegraph:node:stackingOrder = 1
+        quatf xformOp:orient = (0.70710677, -0.70710677, 0, 0)
+        float3 xformOp:scale = (0.2, 0.2, 0.2)
+        float3 xformOp:translate = (2.0721927e-8, 0.01, -0.09401498)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "Armature"
+        {
+            def RealityKitComponent "AnimationLibrary"
+            {
+                token info:id = "RealityKit.AnimationLibrary"
+
+                def RealityKitAnimationFile "skeletal_animation_1"
+                {
+                    uniform bool looping = 1
+                    uniform string name = "skeletal animation 1"
+                }
+
+                def RealityKitAnimationFile "default_subtree_animation"
+                {
+                    uniform bool looping = 1
+                    uniform string name = "default subtree animation"
+                }
+
+                def RealityKitAnimationFile "default_scene_animation"
+                {
+                    uniform bool looping = 1
+                    uniform string name = "default scene animation"
+                }
+            }
+        }
+
+        over "monkey_Main_ctrl"
+        {
+            def RealityKitComponent "AnimationLibrary"
+            {
+                token info:id = "RealityKit.AnimationLibrary"
+
+                def RealityKitAnimationFile "default_scene_animation"
+                {
+                    uniform bool looping = 1
+                    uniform string name = "default scene animation"
+                }
+
+                def RealityKitClipDefinition "Clip_default_subtree_animation"
+                {
+                    uniform string[] clipNames = ["Clip", "Clip 1"]
+                    uniform string sourceAnimationName = "default subtree animation"
+                    uniform double[] startTimes = [0, 15.396611111111111]
+                }
+
+                def RealityKitAnimationFile "Clip_1"
+                {
+                    uniform bool looping = 1
+                    uniform string name = "Clip 1"
+                }
+            }
+        }
+
+        over "Camera" (
+            active = false
+        )
+        {
+        }
+
+        over "monkey_Hip_ctrl"
+        {
+            def RealityKitComponent "AnimationLibrary"
+            {
+                uniform token info:id = "RealityKit.AnimationLibrary"
+
+                def RealityKitClipDefinition "Clip_default_scene_animation"
+                {
+                    uniform string[] clipNames = ["Clip 2", "Clip 3"]
+                    uniform string sourceAnimationName = "default scene animation"
+                    uniform double[] startTimes = [0, 17.021484375]
+                }
+            }
+        }
+
+        def RealityKitComponent "AnimationLibrary"
+        {
+            uniform token info:id = "RealityKit.AnimationLibrary"
+
+            def RealityKitClipDefinition "Clip_default_subtree_animation"
+            {
+                uniform string[] clipNames = ["Clip", "Clip 1", "Walking"]
+                uniform string sourceAnimationName = "default subtree animation"
+                uniform double[] startTimes = [0, 15.666283160065994, 26.035073516078484]
+            }
+
+            def RealityKitAnimationFile "default_subtree_animation"
+            {
+                uniform bool looping = 1
+                uniform string name = "default subtree animation"
+            }
+
+            def RealityKitAnimationFile "Walking"
+            {
+                uniform bool looping = 1
+                uniform string name = "Walking"
+            }
+        }
+    }
+
+    def RealityKitTimeline "Timeline"
+    {
+        def RealityKitTrack "Track"
+        {
+        }
+    }
+
+    def RealityKitTimeline "Walk_to_banana_and_eat_it"
+    {
+        reorder nameChildren = ["Track", "Track2", "Track3"]
+        uniform token info:id = "6C2F93A1-4610-450E-BD18-1EAA3960E811"
+        float2 ui:nodegraph:node:pos = (20, 20)
+        int ui:nodegraph:node:stackingOrder = 1
+
+        def RealityKitTrack "Track"
+        {
+            def RealityKitAction "Transform_To"
+            {
+                string actionKind = "moveTo"
+                int blendLayer = 300
+                double duration = 1
+                uniform token info:id = "6A6D60FA-DFEF-41D7-9330-DAFEA53593A9"
+                float3 position = (2.0721927e-8, 0.01, 0.09153)
+                quatf rotation = (0.7071067, -0.70710677, 0, 0)
+                float3 scale = (0.19999997, 0.19999997, 0.19999997)
+                double startTime = 0
+                rel target = </Root/Monkey>
+
+                def RealityKitStruct "transformMode"
+                {
+                    rel referenceEntity = </Root/Banana>
+                    token type = "parent"
+                }
+
+                def RealityKitStruct "timingFunction"
+                {
+                }
+            }
+        }
+    }
+}
+
