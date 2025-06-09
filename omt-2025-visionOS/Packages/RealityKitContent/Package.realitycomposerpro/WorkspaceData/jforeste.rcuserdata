@@ -1,5 +1,5 @@
 {
-  "advancedEditorSelectedIdentifier" : "ProjectBrowser",
+  "advancedEditorSelectedIdentifier" : "BehaviorsPluginID",
   "openSceneRelativePaths" : [
     "Immersive.usda",
     "Volumetric.usda"
@@ -285,5 +285,5 @@
   "sceneViewportBackgroundColors" : {
 
   },
-  "selectedSceneRelativePath" : "Volumetric.usda"
+  "selectedSceneRelativePath" : "Immersive.usda"
 }

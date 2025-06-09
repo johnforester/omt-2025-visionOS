@@ -7,7 +7,7 @@
 
 def Xform "Root"
 {
-    reorder nameChildren = ["Banana", "GROUND", "Monkey", "GridMaterial", "Timeline", "Walk_to_banana_and_eat_it"]
+    reorder nameChildren = ["Banana", "GROUND", "Monkey", "GridMaterial", "Timeline", "Walk_to_banana_and_eat_it", "Timeline2"]
     def "GridMaterial" (
         active = true
         references = @Materials/GridMaterial.usda@
@@ -190,9 +190,9 @@ def Xform "Root"
 
             def RealityKitClipDefinition "Clip_default_subtree_animation"
             {
-                uniform string[] clipNames = ["Clip", "Clip 1", "Walking"]
+                uniform string[] clipNames = ["Clip", "Eat", "Walking", "Idle"]
                 uniform string sourceAnimationName = "default subtree animation"
-                uniform double[] startTimes = [0, 15.666283160065994, 26.035073516078484]
+                uniform double[] startTimes = [0, 18.293892829038946, 23.600280154753847, 25.237982673131793]
             }
 
             def RealityKitAnimationFile "default_subtree_animation"
@@ -201,10 +201,17 @@ def Xform "Root"
                 uniform string name = "default subtree animation"
             }
 
-            def RealityKitAnimationFile "Walking"
+            def RealityKitClipDefinition "Clip_Monkey2"
+            {
+                uniform string[] clipNames = ["Clip 1", "Clip 2", "Clip 3"]
+                uniform string sourceAnimationName = "Monkey2"
+                uniform double[] startTimes = [0, 11.252444444444444, 19.59488888888889]
+            }
+
+            def RealityKitAnimationFile "Eat"
             {
                 uniform bool looping = 1
-                uniform string name = "Walking"
+                uniform string name = "Eat"
             }
         }
     }
@@ -229,9 +236,9 @@ def Xform "Root"
             {
                 string actionKind = "moveTo"
                 int blendLayer = 300
-                double duration = 1
+                double duration = 1.64815832665377
                 uniform token info:id = "6A6D60FA-DFEF-41D7-9330-DAFEA53593A9"
-                float3 position = (2.0721927e-8, 0.01, 0.09153)
+                float3 position = (2.0721927e-8, 0.25925, 0.09153)
                 quatf rotation = (0.7071067, -0.70710677, 0, 0)
                 float3 scale = (0.19999997, 0.19999997, 0.19999997)
                 double startTime = 0
@@ -244,6 +251,25 @@ def Xform "Root"
                 }
 
                 def RealityKitStruct "timingFunction"
+                {
+                }
+            }
+        }
+
+        def RealityKitTrack "Track2"
+        {
+            def RealityKitAction "Animation"
+            {
+                string actionKind = "animation"
+                string animation = "Walking"
+                int blendLayer = 500
+                double duration = 1.637702518377946
+                uniform token info:id = "61DDFAAC-0252-4FBF-A0CA-C19B2BF624C1"
+                bool separateAnimatedValue = 1
+                double startTime = 0
+                rel target = </Root/Monkey>
+
+                def RealityKitStruct "handoffType"
                 {
                 }
             }
