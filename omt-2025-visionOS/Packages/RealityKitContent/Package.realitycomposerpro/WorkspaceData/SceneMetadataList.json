@@ -11,6 +11,27 @@
       }
     ]
   },
+  "173991DD-36C2-46D8-902D-B32F7EB13E4C" : {
+    "objectMetadataList" : [
+      [
+        "173991DD-36C2-46D8-902D-B32F7EB13E4C",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "173991DD-36C2-46D8-902D-B32F7EB13E4C",
+        "Root",
+        "Sphere"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
   "65F6F990-A780-4474-B78B-572E0E4E273D" : {
     "objectMetadataList" : [
       [
@@ -40,7 +61,8 @@
       [
         "AF09ED6F-1707-48FD-8720-65B998362C09",
         "Root",
-        "Walk_to_banana_and_eat_it"
+        "Walk_to_banana_and_eat_it",
+        "Track"
       ],
       {
         "isExpanded" : true,
@@ -49,8 +71,7 @@
       [
         "AF09ED6F-1707-48FD-8720-65B998362C09",
         "Root",
-        "Walk_to_banana_and_eat_it",
-        "Track"
+        "Walk_to_banana_and_eat_it"
       ],
       {
         "isExpanded" : true,

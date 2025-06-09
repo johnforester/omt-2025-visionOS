@@ -12,6 +12,8 @@ import SwiftUI
 @Observable
 class AppModel {
     let immersiveSpaceID = "ImmersiveSpace"
+    let arSpaceID = "ARSpace"
+
     enum ImmersiveSpaceState {
         case closed
         case inTransition

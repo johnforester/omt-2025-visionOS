@@ -13,12 +13,14 @@ struct ImmersiveView: View {
 
     var body: some View {
         RealityView { content in
-            // Add the initial RealityKit content
             if let immersiveContentEntity = try? await Entity(named: "Immersive", in: realityKitContentBundle) {
                 content.add(immersiveContentEntity)
 
-                // Put skybox here.  See example in World project available at
-                // https://developer.apple.com/
+                
+                // Challenges:
+                // 1) Add a skybox (See example here: https://developer.apple.com/documentation/realitykit/construct-an-immersive-environment-for-visionos)
+                
+                // 2) Make the monkey circle the banana
             }
         }
     }
