@@ -2,6 +2,8 @@
 
 # visionOS Starter Project - One More Thing 2025
 
+# GO TO BRANCH jf/visionOS-26 for the new stuff (requires Xcode 26)
+
 ## 🎯 Overview
 
 This starter project showcases four primary view modes available in visionOS:
