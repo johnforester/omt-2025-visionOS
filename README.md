@@ -49,6 +49,13 @@ The immersive and AR content for this project is created in **Reality Composer P
 - **Immersive.usda** - Full VR environment with TODO
 - **ARScene.usda** - AR content designed to blend with the real world TODO
 
+### Challenges (Ranked easy to hard)
+1. ** Custom skybox in the fully immersive view
+2. ** Spatial SwiftUI layout with 6 or more monkeys (visionOS 26)
+3. ** AR monkey that walks on the ground
+4. ** Nearby Shareplay with the monkey https://developer.apple.com/videos/play/wwdc2025/318 (visionOS 26)
+
+
 ### Adding Your Own Content
 
 1. **Edit existing scenes** in Reality Composer Pro:
