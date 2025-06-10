@@ -7,7 +7,7 @@
 
 def Xform "Root"
 {
-    reorder nameChildren = ["Banana", "GROUND", "Monkey", "GridMaterial", "Timeline", "Walk_to_banana_and_eat_it", "Timeline2"]
+    reorder nameChildren = ["Banana", "GROUND", "Monkey", "GridMaterial", "Walk_to_banana_and_eat_it", "Timeline2"]
     def "GridMaterial" (
         active = true
         references = @Materials/GridMaterial.usda@
@@ -83,11 +83,11 @@ def Xform "Root"
             def Shader "DefaultSurfaceShader"
             {
                 uniform token info:id = "UsdPreviewSurface"
-                color3f inputs:diffuseColor = (0, 0.99007565, 0.20759396) (
+                color3f inputs:diffuseColor = (0.0011043758, 0.46939433, 0.10232592) (
                     colorSpace = "srgb_displayp3"
                 )
-                color3f inputs:emissiveColor = (0, 0.7280649, 0) (
-                    colorSpace = "lin_srgb"
+                color3f inputs:emissiveColor = (0.26807702, 0.5869845, 0.17655683) (
+                    colorSpace = "srgb_displayp3"
                 )
                 float inputs:roughness = 0.75
                 token outputs:surface
@@ -216,16 +216,9 @@ def Xform "Root"
         }
     }
 
-    def RealityKitTimeline "Timeline"
-    {
-        def RealityKitTrack "Track"
-        {
-        }
-    }
-
     def RealityKitTimeline "Walk_to_banana_and_eat_it"
     {
-        reorder nameChildren = ["Track", "Track2", "Track3"]
+        reorder nameChildren = ["Track", "Track2"]
         uniform token info:id = "6C2F93A1-4610-450E-BD18-1EAA3960E811"
         float2 ui:nodegraph:node:pos = (20, 20)
         int ui:nodegraph:node:stackingOrder = 1
@@ -272,6 +265,37 @@ def Xform "Root"
                 def RealityKitStruct "handoffType"
                 {
                 }
+            }
+
+            def RealityKitAction "Animation2"
+            {
+                string actionKind = "animation"
+                string animation = "Eat"
+                int blendLayer = 500
+                double duration = 5.306387325714901
+                uniform token info:id = "C8B0F1FB-6E06-43F1-8986-26BF491B573F"
+                bool separateAnimatedValue = 1
+                double startTime = 1.637702518477946
+                rel target = </Root/Monkey>
+
+                def RealityKitStruct "handoffType"
+                {
+                }
+            }
+        }
+    }
+
+    def Xform "DirectionalLight"
+    {
+        float3 xformOp:translate = (0, 0.16450658, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def RealityKitComponent "DirectionalLight"
+        {
+            token info:id = "RealityKit.DirectionalLight"
+
+            def RealityKitStruct "Shadow"
+            {
             }
         }
     }

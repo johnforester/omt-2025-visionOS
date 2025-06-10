@@ -1,0 +1,68 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 2.0 (476.0.0.508.4)"
+    }
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    reorder nameChildren = ["Monkey2", "Timeline"]
+    def "Monkey2" (
+        active = true
+        customData = {
+            float3 rotationEulerHint = (-1.5707964, 0, 0)
+        }
+        prepend references = @Monkey2.usdz@
+    )
+    {
+        quatf xformOp:orient = (0.70710677, -0.70710677, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def RealityKitComponent "AnimationLibrary"
+        {
+            uniform token info:id = "RealityKit.AnimationLibrary"
+
+            def RealityKitClipDefinition "Clip_default_subtree_animation"
+            {
+                uniform string[] clipNames = ["Clip", "Idle", "Eat"]
+                uniform string sourceAnimationName = "default subtree animation"
+                uniform double[] startTimes = [0, 11.750722222222223, 14.980055555555555]
+            }
+
+            def RealityKitAnimationFile "Idle"
+            {
+                uniform bool looping = 1
+                uniform string name = "Idle"
+            }
+        }
+    }
+
+    def RealityKitTimeline "Timeline"
+    {
+        def RealityKitTrack "Track"
+        {
+            def RealityKitAction "Animation"
+            {
+                string actionKind = "animation"
+                string animation = "Idle"
+                int blendLayer = 500
+                double duration = 3.229333333333333
+                uniform token info:id = "7D07F890-AB59-4E6C-9370-794E6AC6AFDB"
+                double loopCount = 0
+                bool separateAnimatedValue = 1
+                double startTime = 0.029542691647597253
+                rel target = </Root/Monkey2>
+
+                def RealityKitStruct "handoffType"
+                {
+                }
+            }
+        }
+    }
+}
+

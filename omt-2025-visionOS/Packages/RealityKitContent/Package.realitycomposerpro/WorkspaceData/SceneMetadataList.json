@@ -61,10 +61,11 @@
       [
         "AF09ED6F-1707-48FD-8720-65B998362C09",
         "Root",
-        "Walk_to_banana_and_eat_it"
+        "SkyDome"
       ],
       {
-        "isExpanded" : true,
+        "disallowsFraming" : true,
+        "isExpanded" : false,
         "isLocked" : false
       },
       [
@@ -79,7 +80,25 @@
       },
       [
         "AF09ED6F-1707-48FD-8720-65B998362C09",
+        "Root",
+        "GROUND"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "AF09ED6F-1707-48FD-8720-65B998362C09",
         "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "AF09ED6F-1707-48FD-8720-65B998362C09",
+        "Root",
+        "Walk_to_banana_and_eat_it"
       ],
       {
         "isExpanded" : true,
@@ -94,6 +113,16 @@
       {
         "isExpanded" : true,
         "isLocked" : false
+      },
+      [
+        "AF09ED6F-1707-48FD-8720-65B998362C09",
+        "Root",
+        "SkyDome",
+        "Looks"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
       }
     ]
   },
@@ -101,7 +130,8 @@
     "objectMetadataList" : [
       [
         "CB766F92-EE55-4A63-9401-E7B8C009764D",
-        "Root"
+        "Root",
+        "GridMaterial"
       ],
       {
         "isExpanded" : true,
@@ -109,8 +139,7 @@
       },
       [
         "CB766F92-EE55-4A63-9401-E7B8C009764D",
-        "Root",
-        "GridMaterial"
+        "Root"
       ],
       {
         "isExpanded" : true,
@@ -127,7 +156,9 @@
     "objectMetadataList" : [
       [
         "D66134B1-3681-4A8E-AFE5-29F257229F3B",
-        "Root"
+        "Root",
+        "GridMaterial",
+        "GridMaterial"
       ],
       {
         "isExpanded" : true,
@@ -135,9 +166,38 @@
       },
       [
         "D66134B1-3681-4A8E-AFE5-29F257229F3B",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
+  "DEEBA807-06CD-48E3-A412-7C84363DCB52" : {
+    "objectMetadataList" : [
+      [
+        "DEEBA807-06CD-48E3-A412-7C84363DCB52",
         "Root",
-        "GridMaterial",
-        "GridMaterial"
+        "Timeline"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "DEEBA807-06CD-48E3-A412-7C84363DCB52",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "DEEBA807-06CD-48E3-A412-7C84363DCB52",
+        "Root",
+        "Timeline",
+        "Track"
       ],
       {
         "isExpanded" : true,
