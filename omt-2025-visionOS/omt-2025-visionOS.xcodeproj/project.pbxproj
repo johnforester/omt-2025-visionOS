@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		991185832DF5465300D4220E /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 991185822DF5465300D4220E /* RealityKitContent */; };
+		99F767B82DF818EC0068D4BD /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F767B72DF818EB0068D4BD /* WidgetKit.framework */; };
+		99F767BA2DF818EC0068D4BD /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F767B92DF818EC0068D4BD /* SwiftUI.framework */; };
+		99F767C72DF818EC0068D4BD /* MonkeyWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 99F767B52DF818EB0068D4BD /* MonkeyWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -18,12 +21,36 @@
 			remoteGlobalIDString = 9911857C2DF5465300D4220E;
 			remoteInfo = "omt-2025-visionOS";
 		};
+		99F767C52DF818EC0068D4BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 991185752DF5465300D4220E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 99F767B42DF818EB0068D4BD;
+			remoteInfo = MonkeyWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		99F767CC2DF818EC0068D4BD /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				99F767C72DF818EC0068D4BD /* MonkeyWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9911857D2DF5465300D4220E /* omt-2025-visionOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "omt-2025-visionOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		991185812DF5465300D4220E /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		991185952DF5465500D4220E /* omt-2025-visionOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "omt-2025-visionOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		99F767B52DF818EB0068D4BD /* MonkeyWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MonkeyWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		99F767B72DF818EB0068D4BD /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		99F767B92DF818EC0068D4BD /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -33,6 +60,13 @@
 				Info.plist,
 			);
 			target = 9911857C2DF5465300D4220E /* omt-2025-visionOS */;
+		};
+		99F767CB2DF818EC0068D4BD /* Exceptions for "MonkeyWidget" folder in "MonkeyWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 99F767B42DF818EB0068D4BD /* MonkeyWidgetExtension */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -48,6 +82,14 @@
 		991185982DF5465500D4220E /* omt-2025-visionOSTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "omt-2025-visionOSTests";
+			sourceTree = "<group>";
+		};
+		99F767BB2DF818EC0068D4BD /* MonkeyWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				99F767CB2DF818EC0068D4BD /* Exceptions for "MonkeyWidget" folder in "MonkeyWidgetExtension" target */,
+			);
+			path = MonkeyWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -68,6 +110,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		99F767B22DF818EB0068D4BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99F767BA2DF818EC0068D4BD /* SwiftUI.framework in Frameworks */,
+				99F767B82DF818EC0068D4BD /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -77,6 +128,8 @@
 				9911857F2DF5465300D4220E /* omt-2025-visionOS */,
 				991185802DF5465300D4220E /* Packages */,
 				991185982DF5465500D4220E /* omt-2025-visionOSTests */,
+				99F767BB2DF818EC0068D4BD /* MonkeyWidget */,
+				99F767B62DF818EB0068D4BD /* Frameworks */,
 				9911857E2DF5465300D4220E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,6 +139,7 @@
 			children = (
 				9911857D2DF5465300D4220E /* omt-2025-visionOS.app */,
 				991185952DF5465500D4220E /* omt-2025-visionOSTests.xctest */,
+				99F767B52DF818EB0068D4BD /* MonkeyWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,6 +152,15 @@
 			path = Packages;
 			sourceTree = "<group>";
 		};
+		99F767B62DF818EB0068D4BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99F767B72DF818EB0068D4BD /* WidgetKit.framework */,
+				99F767B92DF818EC0068D4BD /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -108,10 +171,12 @@
 				991185792DF5465300D4220E /* Sources */,
 				9911857A2DF5465300D4220E /* Frameworks */,
 				9911857B2DF5465300D4220E /* Resources */,
+				99F767CC2DF818EC0068D4BD /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				99F767C62DF818EC0068D4BD /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				9911857F2DF5465300D4220E /* omt-2025-visionOS */,
@@ -147,6 +212,28 @@
 			productReference = 991185952DF5465500D4220E /* omt-2025-visionOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		99F767B42DF818EB0068D4BD /* MonkeyWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99F767C82DF818EC0068D4BD /* Build configuration list for PBXNativeTarget "MonkeyWidgetExtension" */;
+			buildPhases = (
+				99F767B12DF818EB0068D4BD /* Sources */,
+				99F767B22DF818EB0068D4BD /* Frameworks */,
+				99F767B32DF818EB0068D4BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				99F767BB2DF818EC0068D4BD /* MonkeyWidget */,
+			);
+			name = MonkeyWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = MonkeyWidgetExtension;
+			productReference = 99F767B52DF818EB0068D4BD /* MonkeyWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -154,7 +241,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1640;
+				LastSwiftUpdateCheck = 2600;
 				LastUpgradeCheck = 1640;
 				TargetAttributes = {
 					9911857C2DF5465300D4220E = {
@@ -163,6 +250,9 @@
 					991185942DF5465500D4220E = {
 						CreatedOnToolsVersion = 16.4;
 						TestTargetID = 9911857C2DF5465300D4220E;
+					};
+					99F767B42DF818EB0068D4BD = {
+						CreatedOnToolsVersion = 26.0;
 					};
 				};
 			};
@@ -182,6 +272,7 @@
 			targets = (
 				9911857C2DF5465300D4220E /* omt-2025-visionOS */,
 				991185942DF5465500D4220E /* omt-2025-visionOSTests */,
+				99F767B42DF818EB0068D4BD /* MonkeyWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -195,6 +286,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		991185932DF5465500D4220E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99F767B32DF818EB0068D4BD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -218,6 +316,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		99F767B12DF818EB0068D4BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -225,6 +330,11 @@
 			isa = PBXTargetDependency;
 			target = 9911857C2DF5465300D4220E /* omt-2025-visionOS */;
 			targetProxy = 991185962DF5465500D4220E /* PBXContainerItemProxy */;
+		};
+		99F767C62DF818EC0068D4BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 99F767B42DF818EB0068D4BD /* MonkeyWidgetExtension */;
+			targetProxy = 99F767C52DF818EC0068D4BD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -442,6 +552,68 @@
 			};
 			name = Release;
 		};
+		99F767C92DF818EC0068D4BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 668C4Y7A9L;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MonkeyWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MonkeyWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.forester.omt-2025-visionOS.omt-2025-visionOS.MonkeyWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		99F767CA2DF818EC0068D4BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 668C4Y7A9L;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MonkeyWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MonkeyWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.forester.omt-2025-visionOS.omt-2025-visionOS.MonkeyWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -468,6 +640,15 @@
 			buildConfigurations = (
 				991185A22DF5465500D4220E /* Debug */,
 				991185A32DF5465500D4220E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99F767C82DF818EC0068D4BD /* Build configuration list for PBXNativeTarget "MonkeyWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99F767C92DF818EC0068D4BD /* Debug */,
+				99F767CA2DF818EC0068D4BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

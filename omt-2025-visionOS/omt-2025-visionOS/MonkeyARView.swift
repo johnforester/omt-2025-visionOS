@@ -27,7 +27,7 @@ struct MonkeyARView: View {
                 }
             }
             
-            //await addBanana()
+            await addBanana()
         }
     }
     
@@ -36,11 +36,11 @@ struct MonkeyARView: View {
             let bananaEntity = try await ModelEntity(named: "Banana.usdz")
             
             var meshInstancesComponent = MeshInstancesComponent()
-            let instances = try LowLevelInstanceData(instanceCount: 20)
+            let instances = try LowLevelInstanceData(instanceCount: 200)
             meshInstancesComponent[partIndex: 0] = instances
             
             instances.withMutableTransforms { transforms in
-                for i in 0..<20 {
+                for i in 0..<200 {
                     let scale: Float = .random(in: 1...10)
                     let angle: Float = .random(in: 0..<2) * .pi
                     let randomX: Float = .random(in: -50...50)

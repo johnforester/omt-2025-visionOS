@@ -18,7 +18,7 @@ struct MainWindowView: View {
         Text("OMT 2025")
             .font(.system(size: 72, weight: .heavy, design: .default))
         
-        TimelineView(.animation) { context in
+       /* TimelineView(.animation) { context in
             Model3D(named: "Monkey2", bundle: realityKitContentBundle) { model in
                 model
                     .resizable()
@@ -28,9 +28,9 @@ struct MainWindowView: View {
             } placeholder: {
                 ProgressView()
             }
-        }
+        }*/
         
-     /*   if monkeyAsset == nil {
+        if monkeyAsset == nil {
             ProgressView().task {
                 monkeyAsset = try? await Model3DAsset(named: "Monkey2.usdz")
                 
@@ -52,7 +52,7 @@ struct MainWindowView: View {
                     MonkeyAnimationController(controller: animationController)
                 }
             }
-        }*/
+        }
     }
 }
 
